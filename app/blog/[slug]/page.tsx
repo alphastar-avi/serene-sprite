@@ -2,6 +2,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
+export function generateStaticParams() {
+  return [
+    { slug: "mindful-breathing" }
+  ];
+}
+
 export default function BlogPost({ params }: { params: { slug: string } }) {
   return (
     <main className="min-h-screen">
