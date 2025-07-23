@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+const repoName = 'serene-sprite'; 
+
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -9,6 +10,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: `/${repoName}`,
+  assetPrefix: `/${repoName}/`,
+  output: 'export',
 }
 
 export default nextConfig
