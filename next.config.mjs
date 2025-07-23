@@ -1,4 +1,6 @@
-const repoName = 'serene-sprite'; 
+const repoName = 'serene-sprite';
+
+const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   eslint: {
@@ -10,9 +12,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}/`,
+  ...(isProd && {
+    basePath: `/${repoName}`,
+    assetPrefix: `/${repoName}/`,
+  }),
   output: 'export',
-}
+};
 
-export default nextConfig
+export default nextConfig;
